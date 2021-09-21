@@ -2343,6 +2343,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Posts',
   data: function data() {
@@ -2409,6 +2410,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Tags__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Tags */ "./resources/js/components/Tags.vue");
+//
 //
 //
 //
@@ -38347,7 +38349,7 @@ var render = function() {
       { staticClass: "row row-cols-3 g-4" },
       _vm._l(_vm.posts, function(post) {
         return _c("div", { key: post.id, staticClass: "col mt-4" }, [
-          _c("div", { staticClass: "card text-dark bg-light" }, [
+          _c("div", { staticClass: "card text-dark bg-light h-100" }, [
             _c(
               "div",
               { staticClass: "card-body" },
@@ -38359,6 +38361,13 @@ var render = function() {
                 _c("p", { staticClass: "card-text" }, [
                   _vm._v(_vm._s(_vm.sliceText(post.description, 40)))
                 ]),
+                _vm._v(" "),
+                post.cover
+                  ? _c("img", {
+                      staticClass: "my-2 w-100",
+                      attrs: { src: post.cover, alt: post.title }
+                    })
+                  : _vm._e(),
                 _vm._v(" "),
                 _c("p", { staticClass: "card-text" }, [
                   _c("small", { staticClass: "text-muted" }, [
@@ -38512,7 +38521,12 @@ var render = function() {
       _c("div", { staticClass: "card-body" }, [
         _c("p", [_vm._v(_vm._s(_vm.post.description))]),
         _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
+        _c("img", {
+          staticClass: "w-100",
+          attrs: { src: _vm.post.cover, alt: _vm.post.title }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "row mt-3" }, [
           _vm.post.post_category
             ? _c("div", { staticClass: "col" }, [
                 _vm._v("Categoria: \n          "),

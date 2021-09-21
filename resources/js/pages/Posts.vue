@@ -4,10 +4,11 @@
     <!-- inizio container posts -->
     <div class="row row-cols-3 g-4">
       <div class="col mt-4" v-for="post in posts" :key="post.id"> 
-        <div class="card text-dark bg-light">
+        <div class="card text-dark bg-light h-100">
           <div class="card-body">
             <h3 class="card-title">{{post.title}}</h3>
             <p class="card-text">{{sliceText(post.description, 40)}}</p>
+            <img :src="post.cover" :alt="post.title" v-if="post.cover" class="my-2 w-100">
             <p class="card-text"><small class="text-muted">{{takeData(post.created_at)}}</small></p>
             <router-link :to="{name: 'post-details', params: { slug : post.slug }}" class="btn btn-outline-dark">Leggi articolo</router-link>
           </div>

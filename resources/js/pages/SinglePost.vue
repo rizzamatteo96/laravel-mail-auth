@@ -6,7 +6,8 @@
       </div>
       <div class="card-body">
         <p>{{post.description}}</p>
-        <div class="row">
+        <img :src="post.cover" :alt="post.title" class="w-100">
+        <div class="row mt-3">
           <div class="col" v-if="post.post_category">Categoria: 
             <span class="badge bg-success text-white mx-1">{{post.post_category.name}}</span>
           </div>
