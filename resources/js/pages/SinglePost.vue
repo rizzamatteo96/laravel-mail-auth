@@ -39,7 +39,7 @@ export default {
           .then(response => {
             // console.log(response.data.results);
             this.post = response.data.results;
-            console.log(response.data.results);
+            // console.log(response.data.results);
           })
           .catch();
   }

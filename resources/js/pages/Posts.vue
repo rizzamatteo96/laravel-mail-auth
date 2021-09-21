@@ -65,7 +65,7 @@ export default {
         }
       })
             .then(response => {
-              console.log(response.data);
+              // console.log(response.data);
               this.posts = response.data.results.data;
               this.actualPage = response.data.results.current_page;
               this.lastPage = response.data.results.last_page;

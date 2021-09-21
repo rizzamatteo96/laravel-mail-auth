@@ -15,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Il file JSON che crea questa route è visibile qui: 'http://127.0.0.1:8000/api/posts'
-Route::get('/posts', 'Api\PostController@index');
-Route::get('/posts/{slug}', 'Api\PostController@show');
+// Route::namespace('Api')->group(function(){
+// });
+Route::get('/posts', 'Api/PostController@index');
+Route::get('/posts/{slug}', 'Api/PostController@show');
+Route::post('/contacts', 'Api/ContactController@store');

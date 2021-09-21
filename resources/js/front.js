@@ -12,6 +12,9 @@ window.Vue = require('vue');
 // faccio il require di axios per tutte le pagine del progetto
 window.axios = require('axios');
 
+// comando per l'invio dei dati tramite mail
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 import App from './views/App';
 import router from './router';
 
