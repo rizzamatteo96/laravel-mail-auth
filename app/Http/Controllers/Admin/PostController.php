@@ -128,7 +128,8 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
-            'category_id' => 'nullable|exists:categories,id'
+            'category_id' => 'nullable|exists:categories,id',
+            'image' => 'nullable|image'
         ]);
 
         // recupero i dati dal form
@@ -147,6 +148,17 @@ class PostController extends Controller
             $editPost['slug'] = $newEditSlug;
         }
 
+        if(array_key_exists('image', $editPost)){
+            // Se esista già una foto, elimino la vecchia immagine prima di scrivere quella nuova
+            if($post->cover){
+                Storage::delete($post->cover);
+            }
+            // salvo l'immagine e ne recupero il percorso
+            $cover_path = Storage::put('covers', $editPost['image']);
+            // salvo il tutto nella tabella posts
+            $editPost['cover'] = $cover_path;
+        }
+
 
         // carico le modifiche nel DB
         $post->update($editPost);
@@ -163,7 +175,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-
+        Storage::delete($post->cover);
         $post->tags()->detach();
         $post->delete();
 
