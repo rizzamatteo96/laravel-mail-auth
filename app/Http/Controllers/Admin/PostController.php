@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 use App\Post;
 use App\Category;
@@ -50,12 +51,13 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'description' => 'required',
-            'category_id' => 'nullable|exists:categories,id'
+            'category_id' => 'nullable|exists:categories,id',
+            'image' => 'nullable|image'
         ]);
 
         // recupero i dati dal form
         $newPost = $request->all();
-        
+
         // imposto lo slug dal titolo verificando che non sia già presente nella tabella essendo questo univoco
         $baseSlug = Str::slug($newPost['title'], '-');
 
@@ -70,6 +72,13 @@ class PostController extends Controller
         
         // creo la nuova istanza per inviare i dati al DB
         $upPost = new Post();
+
+        if(array_key_exists('image', $newPost)){
+            // salvo l'immagine e ne recupero il percorso
+            $cover_path = Storage::put('covers', $newPost['image']);
+            // salvo il tutto nella tabella posts
+            $newPost['cover'] = $cover_path;
+        }
 
         // Invio i dati e li salvo nel DB
         $upPost->fill($newPost);

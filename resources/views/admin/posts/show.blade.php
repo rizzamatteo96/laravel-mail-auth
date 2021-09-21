@@ -6,6 +6,10 @@
     {{$post->title}}
   </div>
   <div class="card-body">
+    @if ($post->cover)
+      <img src="{{asset('storage/' . $post->cover)}}" alt="{{$post->title}}">  
+    @endif
+
     <p class="card-text">{{$post->description}}</p>
 
     <p class="card-text mt-5">

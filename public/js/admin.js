@@ -115,8 +115,8 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\2021-09\2021-09-20\php-laravel-odd-list\resources\js\admin.js */"./resources/js/admin.js");
-module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\2021-09\2021-09-20\php-laravel-odd-list\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\2021-09\2021-09-21\laravel-mail-auth\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\2021-09\2021-09-21\laravel-mail-auth\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

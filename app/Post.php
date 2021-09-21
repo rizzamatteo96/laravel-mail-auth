@@ -10,7 +10,8 @@ class Post extends Model
         'title',
         'slug',
         'description',
-        'category_id'
+        'category_id',
+        'cover'
     ];
 
     // Creo la relazione con la tabella delle categorie

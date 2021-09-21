@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <form action="{{route('admin.posts.store')}}" method="POST">
+  <form action="{{route('admin.posts.store')}}" method="POST" enctype="multipart/form-data">
     {{-- genero token --}}
     @csrf
     
@@ -35,6 +35,21 @@
       </select>
     </div>
     {{-- Fine - Campo selezione categoria --}}
+
+
+    {{-- Inizio - Campo caricamento foto --}}
+    <div class="mb-3">
+      <label for="img" class="form-label">Immagine copertina</label>
+      <input type="file" name="image" id="img" class="form-control-file
+      @error('image') 
+        is-invalid 
+      @enderror">
+      @error('image')
+        <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+    </div>
+    {{-- Fine - Campo caricamento foto --}}
+
 
     {{-- Inizio - Campo inserimento descrizione --}}
     <div class="mb-3">

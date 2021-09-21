@@ -54549,7 +54549,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\2021-09\2021-09-20\php-laravel-odd-list\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Boolean\corso-live#36\1-ESERCIZI\mamp_public\2021-09\2021-09-21\laravel-mail-auth\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
