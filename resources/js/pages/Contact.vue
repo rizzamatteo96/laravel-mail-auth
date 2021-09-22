@@ -31,19 +31,6 @@ export default {
   },
   methods: {
     sendForm(){
-      // axios.post('/api/contacts', {
-      //   'name': this.name,
-      //   'email': this.email,
-      //   'message': this.message
-      // })
-      //   .then(response => {
-      //     console.log(response);
-      //   })
-      //   .catch(errors => {
-      //     console.log(errors);
-      //   });
-      console.log('ciao');
-
       let data = {
         'name': this.name,
         'email': this.email,
@@ -52,7 +39,7 @@ export default {
 
       axios.post('/api/contacts', data)
             .then(response => {
-              console.log('ci sono');
+              console.log(response);
             })
             .catch(errors => {
               console.log(errors);

@@ -2312,25 +2312,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendForm: function sendForm() {
-      // axios.post('/api/contacts', {
-      //   'name': this.name,
-      //   'email': this.email,
-      //   'message': this.message
-      // })
-      //   .then(response => {
-      //     console.log(response);
-      //   })
-      //   .catch(errors => {
-      //     console.log(errors);
-      //   });
-      console.log('ciao');
       var data = {
         'name': this.name,
         'email': this.email,
         'message': this.message
       };
       axios.post('/api/contacts', data).then(function (response) {
-        console.log('ci sono');
+        console.log(response);
       })["catch"](function (errors) {
         console.log(errors);
       });
