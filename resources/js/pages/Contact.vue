@@ -31,17 +31,32 @@ export default {
   },
   methods: {
     sendForm(){
-      axios.post('/api/contacts', {
+      // axios.post('/api/contacts', {
+      //   'name': this.name,
+      //   'email': this.email,
+      //   'message': this.message
+      // })
+      //   .then(response => {
+      //     console.log(response);
+      //   })
+      //   .catch(errors => {
+      //     console.log(errors);
+      //   });
+      console.log('ciao');
+
+      let data = {
         'name': this.name,
         'email': this.email,
         'message': this.message
-      })
-        .then(response => {
-          console.log(response);
-        })
-        .catch(errors => {
-          console.log(errors);
-        });
+      };
+
+      axios.post('/api/contacts', data)
+            .then(response => {
+              console.log('ci sono');
+            })
+            .catch(errors => {
+              console.log(errors);
+            });
     }
   }
 }
